@@ -1,8 +1,8 @@
-# PL2024
+# EngWeb2024
 
 UC do 3º Ano de Engenharia Informática na Universidade do Minho
 
-Processamento de Linguagens
+Engenharia Web
 
 ## Aluno
 
