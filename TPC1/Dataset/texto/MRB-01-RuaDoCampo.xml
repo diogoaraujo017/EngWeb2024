@@ -50,7 +50,11 @@
                 <número>3</número>
                 <enfiteuta>Os herdeiros do Padre Domingos Tinoco</enfiteuta>
                 <foro>150 reis e 2 galinhas</foro>
-                <desc><para>Confronta, de Sul, com parte da mesma casa foreira à <entidade tipo="instituição">Confraria da Trindade</entidade>, antiga <entidade tipo="instituição">Confraria da Companhia de Jesus</entidade> e, de Norte, com casa dízima a Deus</para></desc>
+                <desc>
+                    <para>
+                        Confronta, de Sul, com parte da mesma casa foreira à <entidade tipo="instituição">Confraria da Trindade</entidade>, antiga <entidade tipo="instituição">Confraria da Companhia de Jesus</entidade> e, de Norte, com casa dízima a Deus
+                    </para>
+                </desc>
             </casa>
            
         </lista-casas>
