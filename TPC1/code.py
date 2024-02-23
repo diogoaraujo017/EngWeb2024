@@ -183,21 +183,25 @@ for fullFileName in allInfoFiles:
                                     <p>
                                 """
                     
-                    parag = sp.select("casa > para")                 
-                      
-                    for para in parag:
-                        streetHTML += "<p>"
-                        for tag in para.contents:
-                                if tag.name == "lugar":
-                                    streetHTML += f"<b>{tag.get_text()}</b>"
-                                elif tag.name == "entidade":
-                                    streetHTML += f"<i>{tag.get_text()}</i>"
-                                elif tag.name == "data":
-                                    streetHTML += f"<i>{tag.get_text()}</i>"
-                                else:
-                                    streetHTML += f"{tag.get_text()}"
-                        streetHTML += " "
-                    streetHTML += "</p>"    
+                    descrip = sp.select_one(f"casa:nth-of-type({counter}) > desc")                 
+                    
+                    if descrip is None:
+                        streetHTML += f"<p> Não existe descrição para esta casa. </p>"  
+                    else:
+                        parag = descrip.select("para")
+                        for para in parag:
+                            streetHTML += "<p>"
+                            for tag in para.contents:
+                                    if tag.name == "lugar":
+                                        streetHTML += f"<b>{tag.get_text()}</b>"
+                                    elif tag.name == "entidade":
+                                        streetHTML += f"<i>{tag.get_text()}</i>"
+                                    elif tag.name == "data":
+                                        streetHTML += f"<i>{tag.get_text()}</i>"
+                                    else:
+                                        streetHTML += f"{tag.get_text()}"
+                            streetHTML += " "
+                        streetHTML += "</p>"    
                 
                 else:    
                     streetHTML += f"""
