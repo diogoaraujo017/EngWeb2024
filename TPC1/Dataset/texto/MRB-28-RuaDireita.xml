@@ -34,6 +34,7 @@
         </para>
         
         <lista-casas>
+        
             <casa>
                 <número>-</número>
                 <enfiteuta>-</enfiteuta>
@@ -44,6 +45,7 @@
                     </para>
                 </desc>
             </casa>
+
         </lista-casas>
     </corpo>
 </rua>

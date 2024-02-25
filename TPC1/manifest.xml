@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<doc>
+    <meta>
+        <title>TPC1: Construir páginas estáticas em HTML </title>
+        <date>2024-02-22</date>
+        <author>
+            <id>a100544</id>
+            <nome>Diogo Araújo</nome>
+        </author>
+        <uc>
+            <sigla>EW2024</sigla>
+            <nome>Engenharia Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Construir a primeira página contendo todos os índices dos nomes das ruas e com anchor tags que redirecionem para uma página especifica da rua.</p>
+        <p>Essa página terá todas as informações relativas à rua, assim como um link para voltar à página de índices.</p>
+        <p>Fazer para uma ou duas ruas!</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            Para a página de índice inicial, conforme fui criando as paginas de html
+            referentes as ruas fui acumulando numa lista de tuplos o nome da rua e 
+            o nome do ficheiro de html referente a essa rua para no final poder criar
+            o indice com as devidas referencias.
+            </resultado>
+        <resultado>
+            Para realizar a analise de cada um dos ficheiros .xml utilizei as bibliotecas 
+            xmltodict e BeautifulSoup. Presente em cada uma das página das ruas 
+            temos as seguintes informações:
+            </resultado>
+        <resultado>
+            -Para cada uma das página das ruas temos informações sobre o nome da rua, o seu número,
+            uma breve descrição.
+            </resultado>
+        <resultado>
+            -Temos também informações acerca da rua (casas, desenhos e fotos).
+            </resultado>
+        <resultado>
+            -Temos também presente uma lista de casas, onde é possível obter  
+            informações específicas acerca das mesmas.
+            </resultado>
+        <resultado>
+            -Desenhos antigos com várias vistas
+            </resultado>
+        <resultado>
+            -Imagens atuais das ruas que é possível aceder através da pasta "atual".
+            Tendo cada rua duas imagens, com vistas diferentes.
+            </resultado>
+    </resultados>
+</doc>
