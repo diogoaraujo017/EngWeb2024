@@ -29,5 +29,5 @@ Para o índice, foi sugerido o uso do Node.js. Criei um servidor em JavaScript p
 Para executar o programa, execute os seguintes comandos em terminais diferentes:
 
 1. `json-server --watch mapa-virtual.json`
-2. `node server.js`
+2. `node code.js`
 
