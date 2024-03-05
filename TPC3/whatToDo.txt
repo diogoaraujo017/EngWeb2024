@@ -1,0 +1,9 @@
+Corrigir o fucking json
+
+1. Dataset de filmes americanos
+2. GET /filmes            página com uma listagem dos filmes (links embutidos para os filmes)
+3. GET /filmes/<filmeID>  página do filme (apresentar atributos do filme cast*, genre*, ...)
+4. GET /atores            página com uma listagem dos atores (links embutidos para os atores)
+5. GET /atores/<atorID>   página do ator
+6. GET /generos           página com uma listagem dos generos
+7. GET /generos/<generoX> página com os filmes do genero X
