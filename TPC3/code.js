@@ -11,11 +11,14 @@ http.createServer((req, res) =>
     
     // Done
     if(q.pathname == "/"){
-        res.writeHead(200,{"Content-Type":"text/html;charset=utf-8"});
+        res.writeHead(200,{ "Content-Type": "text/html; charset=utf-8" });
         res.write('<h2>Menu do Cinema</h2>');
-        res.write('<ul><li><a href="http://localhost:3001/filmes">Indice de Filmes</a></li>');
+        res.write("<ul>");
+        res.write('<li><a href="http://localhost:3001/filmes">Indice de Filmes</a></li>');
         res.write('<li><a href="http://localhost:3001/atores">Indice de Atores</a></li>');
-        res.write('<li><a href="http://localhost:3001/generos">Indice de Generos</a></li></ul>');
+        res.write('<li><a href="http://localhost:3001/generos">Indice de Generos</a></li>');
+        res.write("</ul>");
+        res.end();
     } 
     // Done
     else if(q.pathname == "/filmes"){
@@ -58,7 +61,7 @@ http.createServer((req, res) =>
                             if (!foundActors.includes(cast[i])) {
                                 foundActors.push(cast[i]);
                                 res.write("<li>" 
-                                    + "<a href='http://localhost:3001/atores/" + cast[i] + "'>"
+                                    + "<a href='http://localhost:3001/atores/" + cast[i].replace(/\s+/g, '_') + "'>"
                                     + cast[i] 
                                     +"</li>");
                             }        
@@ -91,7 +94,7 @@ http.createServer((req, res) =>
                             if (!foundGenres.includes(genres[i])) {
                                 foundGenres.push(genres[i]);
                                 res.write("<li>" 
-                                            + "<a href='http://localhost:3001/generos/" + genres[i] + "'>"
+                                            + "<a href='http://localhost:3001/generos/" + genres[i].replace(/\s+/g, '_') + "'>"
                                             + genres[i] 
                                             + "</li>");
                             }
@@ -114,10 +117,27 @@ http.createServer((req, res) =>
         axios.get('http://localhost:3000/filmes?_id.$oid=' + id)
             .then(dados => {
                 let filme = dados.data;
-                res.write('<h1>'+filme.title+'</h1>');
-                res.write('<p><b>Ano:</b> ' + filme.year + '</p>');
-                res.write('<p><b>Generos:</b> ' + filme.genres + '</p>');
-                res.write('<p><b>Actores:</b> ' + filme.cast + '</p>');
+                res.write('<h1>'+filme[0].title+'</h1>');
+
+                if (filme[0].year){
+                    res.write('<p><b>Ano:</b> ' + filme[0].year + '</p>');
+                } else {
+                    res.write('<p><b>Ano:</b> Nao especificado.</p>');
+                }
+                
+                if (filme[0].cast.length === 0){
+                    res.write('<p><b>Atores:</b> Nao especificado.</p>');
+                }
+                else {
+                    res.write('<p><b>Atores:</b> ' + filme[0].cast + '</p>');
+                }
+
+                if (filme[0].genres.length === 0){
+                    res.write('<p><b>Generos:</b> Nao especificado.</p>');
+                }
+                else {
+                    res.write('<p><b>Generos:</b> ' + filme[0].genres + '</p>');   
+                }
                 res.end();
             })
             .catch(error => {
@@ -129,7 +149,7 @@ http.createServer((req, res) =>
     // Done
     else if (q.pathname.includes("/atores/")) {
         var actor = q.pathname.split("/")[2];
-        actor = actor.replace("%20", " ");
+        actor = actor.replace(/_/g, ' ');
         axios.get('http://localhost:3000/filmes')
             .then(dados => {
                 res.write('<h1>' + actor + '</h1>');
@@ -160,7 +180,7 @@ http.createServer((req, res) =>
     // Done
     else if (q.pathname.includes("/generos/")) {
         var genre = q.pathname.split("/")[2];
-        genre = genre.replace("%20", " ");
+        genre = genre.replace(/_/g, ' ');
         axios.get('http://localhost:3000/filmes')
             .then(dados => {
                 res.write('<h1>' + genre + '</h1>');
