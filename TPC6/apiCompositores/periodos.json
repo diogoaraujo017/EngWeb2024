@@ -1,0 +1,17 @@
+[
+        {
+        "id": "P1",
+        "nome": "Barroco",
+        "desc": "AA arte barroca situa-se cronologicamente entre o final do século XVI e meados do século XVIII. Apresenta um sentido geral de grandiosidade, recorrendo a geometrias variáveis que ajudavam à dinâmica e vitalidade das composições, potenciadas pela tensão e expressão emocional e pelo naturalismo das figuras."
+        },
+        {
+        "id": "P2",
+        "nome": "Renascimento",
+        "desc": "As características do Renascimento marcaram o movimento renascentista na Itália, no início do século XV. As principais características foram o humanismo, o antropocentrismo, o individualismo, o universalismo, o racionalismo, o cientificismo e a valorização da Antiguidade Clássica."
+        },
+        {
+        "id": "P3",
+        "nome": "Moderno",
+        "desc": "A Idade Moderna foi um período específico da História do Ocidente que se inicia no final da Idade Média em 1453 d.C., embora os limites cronológicos sejam objeto de debate, a linha temporal deste período estende-se do final do século XV até à Idade das Revoluções no século XVIII; muitos historiadores assinalam o início desta idade na data de 29 de maio de 1453, quando ocorreu a tomada de Constantinopla pelos turcos otomanos, incluindo assim o Renascimento e a Era dos Descobrimentos (incluindo as viagens de Colombo que começaram em 1492 e a descoberta do caminho marítimo para a Índia por Vasco da Gama em 1498), e data de término com a Revolução Francesa no dia 14 de julho de 1789."
+        }
+]
